@@ -67,6 +67,7 @@ while True:
 
     validar_email = 0
     validar_relacionamento = 0
+    validar_reprocessamento = 0
 
     sleep(1)
     if os.name == 'nt':
@@ -106,6 +107,7 @@ while True:
 [2] Templates de relacionamento
 [3] Gerador de comentário
 [4] WTCM
+[5] Reprocessamento Stone
         ''')
     opcao_inicial = input('Digite a opção desejada: ')
 
@@ -352,12 +354,105 @@ ACCESSTAGE - VALECARD - EXTRATO
             
     # 3 -> GERADOR DE COMENTÁRIO
     elif opcao_inicial == '3':
-        ...
+        input('''
+              _
+             | |
+             | |===( )   //////
+             |_|   |||  | o o|
+                    ||| ( c  )                  ____
+                     ||| \= /                  ||   \_
+                      ||||||                   ||     |
+                      ||||||                ...||__/|-"
+                      ||||||             __|________|__
+                        |||             |______________|
+                        |||             || ||      || ||
+                        |||             || ||      || ||
+------------------------|||-------------||-||------||-||-------
+                        |__>            || ||      || ||
+
+      \033[31mFoi mal, ainda estou desenvolvendo isso....\033[m
+
+      ''')
+        if os.name == 'nt':
+            os.system('cls')
+        else:
+            os.system('clear')
 
     # 4 -> WTCM
     elif opcao_inicial == '4':
-        ...
-    
-    else:
+        input('''
+              _
+             | |
+             | |===( )   //////
+             |_|   |||  | o o|
+                    ||| ( c  )                  ____
+                     ||| \= /                  ||   \_
+                      ||||||                   ||     |
+                      ||||||                ...||__/|-"
+                      ||||||             __|________|__
+                        |||             |______________|
+                        |||             || ||      || ||
+                        |||             || ||      || ||
+------------------------|||-------------||-||------||-||-------
+                        |__>            || ||      || ||
+
+      \033[31mFoi mal, ainda estou desenvolvendo isso....\033[m
+
+      ''')
+        if os.name == 'nt':
+            os.system('cls')
+        else:
+            os.system('clear')
+
+    elif opcao_inicial == '5':
+        while validar_reprocessamento == 0:
+            print('''
+\033[1;36mREPROCESSAMENTO - STONE\033[m
+A Stone não realiza o reprocessamento de arquivos, mas disponiblizam um banco de dados para obtermos os retroativos.''')
+            usuario = input('INSIRA SEU USUÁRIO DA DEMO: ').upper()
+            nome_mapa = input('Insira um nome para o mapa (separe com "_"): ').upper()
+            cnpj = input('Insira o CNPJ do cliente (apenas números): ')
+            stone_code = input('Insira o Stone Code do cliente: ')
+            caixa_postal = input('Insira o ID da caixa postal do cliente: ')
+            dias_retroativos = input('Insira o número de dias retroativos: ')
+            if os.name == 'nt':
+                    os.system('cls')
+            else:
+                    os.system('clear')
+            input('A partir de agora, você deve copiar os códigos completos informados na tela (enter para continuar).')    
+            if os.name == 'nt':
+                    os.system('cls')
+            else:
+                    os.system('clear')
+            input(f'vi {nome_mapa}.ini')
+            if os.name == 'nt':
+                    os.system('cls')
+            else:
+                    os.system('clear')
+            input(f'''[{nome_mapa}]
+authorization0={cnpj};{stone_code};RET.EXT.{stone_code}.390.{caixa_postal}''')
+            if os.name == 'nt':
+                    os.system('cls')
+            else:
+                    os.system('clear')
+            input(f'esc + :wq')
+            if os.name == 'nt':
+                    os.system('cls')
+            else:
+                    os.system('clear')
+            input(f'''/home/skyline/scripts/stone/StoneGetFiles.sh.run ~/operacoes/DEMO.{usuario}/mailbox/{nome_mapa}.ini -r {dias_retroativos}
+''')
+            if os.name == 'nt':
+                    os.system('cls')
+            else:
+                    os.system('clear')
+            input('cd ~/scripts/stone/python/reprocessamento')
+            if os.name == 'nt':
+                    os.system('cls')
+            else:
+                    os.system('clear')
+            input(f'''for i in *RET.EXT.{stone_code}.390.{caixa_postal}* ; do mv -v $i /var/spool/nexxera/skyline/recebe/ident/$(basename $i | cut -f1 -d\$) ; sleep 1 ; done ''')
+            validar_reprocessamento = 1
+    else:   
         print('\033[31mEssa opção não é válida\033[m')
     
