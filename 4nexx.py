@@ -68,6 +68,7 @@ while True:
     validar_email = 0
     validar_relacionamento = 0
     validar_reprocessamento = 0
+    validar_wtcm = 0
 
     sleep(1)
     if os.name == 'nt':
@@ -380,29 +381,189 @@ ACCESSTAGE - VALECARD - EXTRATO
 
     # 4 -> WTCM
     elif opcao_inicial == '4':
-        input('''
-              _
-             | |
-             | |===( )   //////
-             |_|   |||  | o o|
-                    ||| ( c  )                  ____
-                     ||| \= /                  ||   \_
-                      ||||||                   ||     |
-                      ||||||                ...||__/|-"
-                      ||||||             __|________|__
-                        |||             |______________|
-                        |||             || ||      || ||
-                        |||             || ||      || ||
-------------------------|||-------------||-||------||-||-------
-                        |__>            || ||      || ||
+        while validar_wtcm == 0:
+            print('''
+\033[1;36mWTCM\033[m
+[1] Solicitar WTCM
+[2] Validar recebimento para edição
+[3] Editar WTCM (Após solicitação)
+[4] Visualizar evidência
+[S] Voltar''')
+            opcao_wtcm = input('Isira a opção desejada: ')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            if opcao_wtcm == '1':
+                print('\033[1;36mSOLICITAR WTCM\033[m')
+                sleep(1)
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('A partir de agora, você deve copiar os códigos completos informados na tela (enter para continuar).')    
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('cd')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('vi wtcmactions.ini')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('/TRIBANCO.TRIBANCO')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('\033[1;36mSelecionar "insert" para editar, trocar TRIBANCO.TRIBANCO.command=0 para command=1\033[m')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(':wq')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
 
-      \033[31mFoi mal, ainda estou desenvolvendo isso....\033[m
-
-      ''')
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
+            elif opcao_wtcm == '2':
+                print('\033[1;36mVALIDAR RECEBIMENTO WTCM\033[m')
+                sleep(1)
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('cd wtcm')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('ls -ltr *TRIBANCO*')
+                input('\033[1;36mCaso retorne um arquivo, o WTCM chegou\033[m')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+            elif opcao_wtcm == '3':
+                print('\033[1;36mEDITAR WTCM\033[m')
+                sleep(1)
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('Esse processo só deve ser realizado após a solicitação do WTCM e a validação do recebimento.')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('cd wtcm')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('vi wtcm.TRIBANCO.TRIBANCO')
+                input('\033[1;36mpagedown até o fim do arquivo, colar as contas após a última\033[m')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('esc + :wq')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                datahoje =  input('Isira a data de hoje no modelo YYYYmmdd: ')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(f'''cp -pv wtcm.TRIBANCO.TRIBANCO ~/DEMO.GUSTAVOD/WTCM_TRIBANCO_backup/Evidencia_{datahoje}''')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('cd')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('vi wtcmactions.ini')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('/TRIBANCO.TRIBANCO')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('\033[1;36mSelecionar "insert" para editar, trocar TRIBANCO.TRIBANCO.command=1 para command=2\033[m')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(':wq')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                validar_wtcm = 1
+            
+            elif opcao_wtcm == '4':
+                print('\033[1;36mVISUALIZAR EVIDÊNCIA\033[m')
+                sleep(1)
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                conta = input('Selecione a conta que deseja pesquisar: ')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('cd ~/DEMO.GUSTAVOD/WTCM_TRIBANCO_backup')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('ls -ltr')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input('vi *ultima evidencia*')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                print(f'/{conta}')
+                input('')
+                validar_wtcm = 1
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+            
+            elif opcao_wtcm.upper() == 'S':
+                validar_wtcm = 1
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+            
+            else:
+                print('\033[31mEssa opção não é válida\033[m')
+                sleep(1)
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
 
     elif opcao_inicial == '5':
         while validar_reprocessamento == 0:
@@ -420,6 +581,11 @@ A Stone não realiza o reprocessamento de arquivos, mas disponiblizam um banco d
             else:
                     os.system('clear')
             input('A partir de agora, você deve copiar os códigos completos informados na tela (enter para continuar).')    
+            if os.name == 'nt':
+                    os.system('cls')
+            else:
+                    os.system('clear')
+            input(f'd ~/operacoes/DEMO.{usuario}/mailbox')
             if os.name == 'nt':
                     os.system('cls')
             else:
