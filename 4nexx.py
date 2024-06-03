@@ -69,6 +69,9 @@ while True:
     validar_relacionamento = 0
     validar_reprocessamento = 0
     validar_wtcm = 0
+    validar_liberacao = 0
+    validar_traducao = 0
+    validar_extracao_dados = 0
 
     sleep(1)
     if os.name == 'nt':
@@ -101,6 +104,9 @@ while True:
     else:
         sextou = ' Silvano!'
 
+    
+    
+    
     # MENU INICIAL
     print(f'''{saudacao} {sextou}
 
@@ -109,6 +115,10 @@ while True:
 [3] Gerador de comentário
 [4] WTCM
 [5] Reprocessamento Stone
+[6] Liberação de arquivos manual
+[7] Tradução/importação operadoras
+[8] Tradução/importação extrato bancário
+[9] Extrair dados
         ''')
     opcao_inicial = input('Digite a opção desejada: ')
 
@@ -117,6 +127,10 @@ while True:
     else:
         os.system('clear')
 
+    
+    
+    
+    
     # 1 -> GERADOR DE E-EMAILS
     if opcao_inicial == '1':
         while validar_email == 0:
@@ -238,6 +252,9 @@ Ficamos à disposição.
             else:
                 print('\033[1;31mEssa opção não é valida\033[m')
 
+    
+    
+    
     # 2 -> TEMPLATE DE RELACIONAMENTO
     elif opcao_inicial == '2':
         while validar_relacionamento == 0:
@@ -353,6 +370,11 @@ ACCESSTAGE - VALECARD - EXTRATO
             else:
                 print('\033[1;31mEssa opção não é valida\033[m')
             
+    
+    
+    
+    
+    
     # 3 -> GERADOR DE COMENTÁRIO
     elif opcao_inicial == '3':
         input('''
@@ -379,6 +401,12 @@ ACCESSTAGE - VALECARD - EXTRATO
         else:
             os.system('clear')
 
+    
+    
+    
+    
+    
+    
     # 4 -> WTCM
     elif opcao_inicial == '4':
         while validar_wtcm == 0:
@@ -565,6 +593,12 @@ ACCESSTAGE - VALECARD - EXTRATO
                 else:
                     os.system('clear')
 
+    
+    
+    
+    
+    
+    
     elif opcao_inicial == '5':
         while validar_reprocessamento == 0:
             print('''
@@ -619,6 +653,110 @@ authorization0={cnpj};{stone_code};RET.EXT.{stone_code}.390.{caixa_postal}''')
                     os.system('clear')
             input(f'''for i in *RET.EXT.{stone_code}.390.{caixa_postal}* ; do mv -v $i /var/spool/nexxera/skyline/recebe/ident/$(basename $i | cut -f1 -d\$) ; sleep 1 ; done ''')
             validar_reprocessamento = 1
+    
+    
+    
+    elif opcao_inicial == '6':
+         while validar_liberacao == 0:
+            print('\033[1;36mLIBERAR ARQUIVOS\033[m')
+            sleep(1)
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            pasta = input('Digite o diretório dos arquivos: '.upper())
+            diretorio = input('Digite o diretório (mailbox/sent/sitef): ')
+            nomenclatura = input('Digite a nomenclatura do arquivo: ')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            input(f'''for i in ~/{pasta}/{diretorio}/*{nomenclatura}* ; do mv -v $i /var/spool/nexxera/skyline/recebe/ident/$(basename $i | cut -f1 -d\$) ; sleep 1 ; done''')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            validar_liberacao = 1
+
+
+    elif opcao_inicial == '7':
+        ...
+
+    
+
+    elif opcao_inicial == '8':
+        ...
+
+
+
+    elif opcao_inicial == '9':
+        while validar_extracao_dados == 0:
+            print('''
+\033[1;36mEXTRAIR DADOS\033[m
+[1] EC/PV
+[2] Conta
+[S] Voltar''')
+            opcao_extracao_dados = input('Isira a opção desejada: ')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            if opcao_extracao_dados == "1":
+                print('''
+\033[1;36mEXTRAIR PV/ECs\033[m''')
+                sleep(0.5)
+                nomenclatura_arquivo = input('Digite a nomenclatura do arquivo: ')
+                demo = input('Digite seu usuário na DEMO: '.upper())
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(f'cp -pv *{nomenclatura_arquivo}* ~/DEMO.{demo}/mailbox')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(f'''for i in ~/DEMO.{demo}/mailbox/* ; do /home/skyline/scripts/nexxcard/console/processos/operadoras_CartoesGenerico.sh.run $i traduz; done''')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(f'''for i in ~/DEMO.{demo}/mailbox/*LPN* ; do /home/skyline/scripts/thyagos/extrair_pv_arquivo_lpn.sh.run $i ; done''')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                validar_extracao_dados = 1
+
+            elif opcao_extracao_dados == '2':
+                print('''
+\033[1;36mEXTRAIR CONTA\033[m''')
+                sleep(0.5)
+                nomenclatura_arquivo = input('Digite a nomenclatura do arquivo: ')
+                demo = input('Digite seu usuário na DEMO: '.upper())
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(f'cp -pv *{nomenclatura_arquivo}* ~/DEMO.{demo}/mailbox')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(f'''for i in ~/DEMO.{demo}/mailbox/* ; do /home/skyline/scripts/nexxcard/console/processos/operadoras_CartoesGenerico.sh.run $i traduz; done''')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                input(f'''for i in ~/DEMO.{demo}/mailbox/*LPN* ; do/home/skyline/scripts/thyagos/extrair_contas_arquivo_lpn.sh.run $i ; done''')
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                validar_extracao_dados = 1
+            
+            elif opcao_extracao_dados.upper() == 'S':
+                validar_extracao_dados = 1
     else:   
         print('\033[31mEssa opção não é válida\033[m')
     
