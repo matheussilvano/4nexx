@@ -72,6 +72,7 @@ while True:
     validar_liberacao = 0
     validar_traducao = 0
     validar_extracao_dados = 0
+    validar_traducao_operadoras = 0
 
     sleep(1)
     if os.name == 'nt':
@@ -680,9 +681,65 @@ authorization0={cnpj};{stone_code};RET.EXT.{stone_code}.390.{caixa_postal}''')
 
 
     elif opcao_inicial == '7':
-        ...
-
-    
+        while validar_traducao_operadoras == 0:
+            print('''
+\033[1;36mTRADUÇÃO E IMPORTAÇÃO - OPERADORAS\033[m''')
+            demo = input('Digite o usuário da sua DEMO: '.upper())
+            opcao_vizzoo = input('''Vizzoos:
+[1] Vizzoo Hubly
+[2] Vizzoo SE
+[3] Vizzoo Azul
+Selecione o Vizzoo utilizado: ''')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            
+            if opcao_vizzoo == '1':
+                tipo_vizzoo = 'vizzoo_hubly'
+                print('\033[1;36mVizzoo hubly selecionado\033[m')
+                sleep(1)
+            elif opcao_vizzoo == '2':
+                tipo_vizzoo = 'vizzoo_se'
+                print('\033[1;36mVizzoo SE selecionado\033[m')
+                sleep(1)
+            elif opcao_vizzoo == '3':
+                tipo_vizzoo = 'vizzoo'
+                print('\033[1;36mVizzoo Azul selecionado\033[m')
+                sleep(1)
+            else:
+                print('Opção inválida')
+                sleep(1)
+                if os.name == 'nt':
+                    os.system('cls')
+                else:
+                    os.system('clear')
+                break
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            cnpj_grupo = input('Insira o CNPJ do grupo:')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            input(f'for i in ~/DEMO.{demo}/mailbox/* ; do /home/skyline/scripts/nexxcard/console/processos/operadoras_CartoesGenerico.sh.run $i traduz; done')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            input(f'cd /home/skyline/scripts/{tipo_vizzoo}/console/')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            input(f'''for i in ~/DEMO.{demo}/mailbox/*LPN* ; do "${{JAVA6_HOME}}/bin/java" -jar nexxcard-console.jar Processo -p ProcessImportaArquivo -i $i -cnpj '{cnpj_grupo}' -c 'nexxcard-config.properties' -verbose ; done''')
+            validar_traducao_operadoras = 1
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
 
     elif opcao_inicial == '8':
         ...
