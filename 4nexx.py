@@ -73,6 +73,7 @@ while True:
     validar_traducao = 0
     validar_extracao_dados = 0
     validar_traducao_operadoras = 0
+    validar_liberacao_em_massa = 0
 
     sleep(1)
     if os.name == 'nt':
@@ -120,6 +121,7 @@ while True:
 [7] Tradução/importação operadoras
 [8] Tradução/importação extrato bancário
 [9] Extrair dados
+[10] Liberação de arquivos em massa
         ''')
     opcao_inicial = input('Digite a opção desejada: ')
 
@@ -814,6 +816,40 @@ Selecione o Vizzoo utilizado: ''')
             
             elif opcao_extracao_dados.upper() == 'S':
                 validar_extracao_dados = 1
+
+    elif opcao_inicial == '10':
+        while validar_liberacao_em_massa == 0:
+            print('''
+\033[1;36mLIBERAÇÃO EM MASSA DE ARQUIVOS\033[m''')
+            cnpj_ec = input('Insira os CNPJs/ECs separados por espaços: ')
+            diretorio = input('Selecione a caixa e o diretório (Ex: .QUARENTENA/mailbox): ')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            input(f'''for cnpj in {cnpj_ec}; do
+    for i in ~/.QUARENTENA/mailbox/*${{cnpj}}*; do
+        mv -v $i /var/spool/nexxera/skyline/recebe/ident/$(basename $i | cut -f1 -d\$);
+       sleep 1;
+    done;
+done;''')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            continuar = input('''[1] Realizar novamente
+[2] Voltar para a tela inicial
+Você deseja: ''')
+            if os.name == 'nt':
+                os.system('cls')
+            else:
+                os.system('clear')
+            if continuar == '2':
+                validar_liberacao_em_massa = 1
+            else:
+                ...
+
+                
     else:   
         print('\033[31mEssa opção não é válida\033[m')
     
