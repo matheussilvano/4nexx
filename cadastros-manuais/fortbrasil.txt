@@ -1,0 +1,35 @@
+CADASTRO FORTBRASIL
+
+nomenclatura: postoiguana
+CNPJ: 08350555000175
+cp cliente: 38883
+DOMÍNIO: FAN
+
+======= FORTBRASIL.RETORNOS (26631) =======
+
+Máscara entrada banco:
+fb_postoiguana_%Y%m%d.txt
+
+Máscara saída banco:
+RET.EXT.08350555000175.400.38883.T&C(8).FORT
+
+Script p/ recepção banco:
+/home/skyline/scripts/inte_rvs/Grb -I /home/skyline/scripts/inte_rvs/grb.cfg &F
+
+Estação:
+47358
+
+
+======= CAIXA CLIENTE (38883) =======
+
+Máscara entrada banco:
+RET.EXT.08350555000175.400
+
+Máscara saída banco:
+Fortbrasil_08350555000175_%d%m%Y_&C(3).ret
+
+Estação:
+FAN.FORTBRASIL-EXTRATO-08350555000175
+
+Nome:
+FAN - FORTBRASIL - EXTRATO
