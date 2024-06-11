@@ -1,0 +1,150 @@
+## COMPACTAR/DESCOMPACTAR ARQUIVOS ##
+
+COMPACTAR: zip [nome_do_arquivo.zip]
+DESCOMPACTAR (ZIP): unzip [nome_do_arquivo.zip]
+DESCOMPACTAR (GZ): [nome_do_arquivo.gz]
+
+## SABER OS PROCESSOS QUE RODAM NA CRON ##
+
+crontab | grep bankweb
+
+## VISUALIZAR O CONTEÚDO DO ARQUIVO ##
+
+less [arquivo]
+
+## LOGAR COM OUTRO USUÁRIO ##
+
+su - [usuario]
+
+## MOVER OU RENOMEAR ARQUIVO ##
+
+RENOMEAR: mv [arquivo] [novo_nome_do_arquivo]
+MOVER: mv [arquivo] [destino]
+
+
+## ALTERAR PERMISSÕES DE PASTA E ARQUIVOS ##
+
+chmod 777 [arquivo] ou [pasta]
+Obs.: 4 = Leitura, 2 = Escrita, 1 = Execução.
+A primeira casa é referente as permissões do usuário dono do arquivo, a segunda casa é referente as permissões do grupo de usuários e a terceira casa é referente as permissões dos outros usuários.
+
+## APLICATIVO PARA EDIÇÃO DE ARQUIVOS ##
+
+vi [arquivo]
+
+
+# INFORMAÇÕES BÁSICAS DE COMO UTILIZAR O APLICATIVO VI #
+
+i = Altera para o modo de inserção de informações no arquivo.
+Esc = Altera para o modo de visualização do arquivo.
+:q = Fechar o aplicativo, somente no modo de visualização.
+:q! = O ponto de exclamação força o aplicativo a fechar, somente no modo de visualização.
+:w = Salva o arquivo, somente no modo de visualização.
+/ = Comando para perquisar, somente no modo de visualização.
+
+## CRIAR ARQUIVO SEM CONTEÚDO ##
+
+touch [nome_do_arquivo]
+
+
+## VISUALIZAR O CONTEÚDO DOS ARQUIVOS ##
+
+cat [arquivo]
+
+## VISUALIZAR A QUANTIDADE DE POSIÇÕES DO ARQUIVO ##
+
+wc -L [arquivo]
+
+## CONTAR QUANTOS ARQUIVOS EXISTEM NO DIRETÓRIO ##
+
+ls -ltr * | wc -l
+
+## COMPARAR ARQUIVOS ##
+
+diff [arquivo1] [arquivo2]
+
+## COMANDO FOR ##
+
+for i in [diretório onde está os arquivos] ; do [script que será executado] ; done
+
+Exemplo: for i in /home/skyline/DEMO.SILVANO/sent/sent/PAG_237_360007* ; do /home/skyline/scripts/bradesco/generico/pagamento/import_ret_Bradesco_PE.sh.run ${i} DEMO.SILVANO ; done
+
+## COMANDO CD ##
+
+cd [nome-do-diretório]
+   . - Diretório atual
+   .. - Diretório anterior
+   ~ - Diretório home do usuário
+   / - Diretório Raiz
+
+## COMANDO LS ##
+  -l  detalhado
+  -t  ordem cronológica
+  -r  ordem inversa (cronológica ou alfabética)
+  -a  lista todos os arquivos (inclusive ocultos)
+
+## ARQUIVOS E DIRETÓRIOS ##
+O sistema de arquivos linux é hierárquico, baseado em árvore, conforme:
+    /
+    |-- home
+    |   |-- skyline
+    |   |   |-- scripts
+    |   |   |   |-- 3m
+    |   |   |   |-- ...
+    |   |   |   `-- zaffari
+    |   |   |-- debug
+    |   |   `-- sys
+    |   |    
+    |   |-- cd
+    |   |   |-- recebe
+    |   |   |-- scripts
+    |   `-- rvs
+    |       |-- db
+    |       |-- temp
+    |       `-- usrdat
+    |-- var
+    |   |-- spool
+    |
+
+
+## GREP ##
+
+grep [-opções] [expressao] [arquivo]
+   -c  somente a quantidade de linhas que casarem com a expressão
+   -i  não diferencia maiúsculas de minúsculas
+   -l  não mostra o resultado, apenas o nome do arquivo
+   -v  inverte a procura, mostrando apenas as linhas que NÃO casaram com a expressão
+   -n  precede cada linha com seu número relativo dentro do arquivo
+
+[expressao] – texto a procurar dentro do arquivo ou qualquer expressão regular
+
+
+## CAT ##
+
+cat [-opções] <arquivo[1-n]>
+   -v  mostra os caracteres sem representação na tela
+   -e  mostra os LINE_FEED (ENTER)
+   -t  mostra as <TAB>
+   -n  Numera as linhas
+
+## TAIL ##
+
+tail [+|-numero] [-cf] <arquivo>
+   +numero  mostra arquivo a partir da linha numero até o final
+   -numero  mostra as numero últimas linhas do arquivo
+   Se número não for especificado, tail mostra as 10 últimas linhas
+   -c, --bytes=tamanho mostra os últimos tamanho caracteres.
+   -f  exibe na tela as linhas do arquivo à medida que ele cresce
+
+   $ tail -1 suporte.txt
+   Robson Fernado Damázio
+   $ tail -c10 suporte.txt
+   o Damázio
+
+
+
+
+
+
+
+
