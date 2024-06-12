@@ -137,9 +137,9 @@ tail [+|-numero] [-cf] <arquivo>
    -f  exibe na tela as linhas do arquivo à medida que ele cresce
 
    $ tail -1 suporte.txt
-   Robson Fernado Damázio
+   Matheus Silvano
    $ tail -c10 suporte.txt
-   o Damázio
+   us Silvano
 
 
 
