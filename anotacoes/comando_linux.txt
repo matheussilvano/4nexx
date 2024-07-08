@@ -141,6 +141,10 @@ tail [+|-numero] [-cf] <arquivo>
    $ tail -c10 suporte.txt
    us Silvano
 
+## PESQUISAR UM ARQUIVO EM TODAS AS PASTAS (CARD) ##
+
+find ~/OPERADORAS.SEMRELACIONAMENTO/sent ~/.QUARENTENA/mailbox ~/CIELO.SEMPV/sent ~/ALELOSEMPV/sent -type f -name *'arquivo'* -exec ls -ltr {} \;
+
 
 
 
