@@ -1,3 +1,12 @@
+######################################################################################
+##                                                                                  ##
+##     4nexx.py - Script para documentar processos de cartões                       ##
+##                                                                                  ##
+##     Autor: Matheus Silvano                                                       ##
+##     Data Criação: 25/05/2024                                                     ##
+##                                                                                  ##
+######################################################################################
+
 import random
 import datetime
 import os
@@ -63,6 +72,13 @@ dPw8 8  "8 8.dP'  `8.   `8.
 escolher_titulo = random.choice(lista_ascii)
 print(escolher_titulo)
 
+# Função para limpar a tela após um script
+def limpar_tela():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
 while True:
 
     validar_email = 0
@@ -125,15 +141,8 @@ while True:
         ''')
     opcao_inicial = input('Digite a opção desejada: ')
 
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
-
-    
-    
-    
-    
+    limpar_tela()
+  
     # 1 -> GERADOR DE E-EMAILS
     if opcao_inicial == '1':
         while validar_email == 0:
@@ -147,10 +156,7 @@ while True:
               ''')
             opcao_email = input('Digite a opção desejada: ')
 
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
 
             # 1.1 -> E-MAIL PAGSEGURO
             if opcao_email == '1':
@@ -160,10 +166,7 @@ while True:
                 cnpj = input('Insira o CNPJ: ')
                 id = input('Insira o DsName do cliente: ')
                 caixa_postal = input('Insira o id caixa postal do cliente: ')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 print(f'''
 Prezados, {saudacao}!
 
@@ -202,10 +205,7 @@ RET.TRA.{id}XXX.680.{caixa_postal}  ''')
       \033[31mFoi mal, ainda estou desenvolvendo isso....\033[m
 
       ''')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
 
             elif opcao_email == '3':
                 print('\033[1;36mGERADOR DE E-MAIL CONCLUSÃO - ALPHA7\033[m')
@@ -215,10 +215,7 @@ RET.TRA.{id}XXX.680.{caixa_postal}  ''')
                 relacionamentos_bancarios = input('Digite os relacionamentos bancários pendentes: ')
                 caixa_postal = input('Insira a caixa postal do cliente: ')
                 senha = input('Digite a senha do cliente: ')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 print(f'''
 Prezados, {saudacao}!
 
@@ -270,10 +267,7 @@ Ficamos à disposição.
               ''')
             opcao_relacionamento = input('Digite a opção desejada: ')
 
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
 
             if opcao_relacionamento == '1':
                 print('\033[1;36mTEMPLATE VALECARD X ACCESSTAGE\033[m')
@@ -300,10 +294,7 @@ ESTAÇÃO(BANCO):
 14946''')
 
                 continuar = input('Digite enter para continuar: ')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
 
                 print(f'''
 ==== CAIXA ACCESSTAGE.OPERADORAS (34776) ====
@@ -334,10 +325,7 @@ NOME:
 ACCESSTAGE - VALECARD - EXTRATO
       ''')
                 terminar = input('Digite enter para sair: ')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 validar_relacionamento = 1
 
             elif opcao_relacionamento == '2':
@@ -362,10 +350,7 @@ ACCESSTAGE - VALECARD - EXTRATO
       \033[31mFoi mal, ainda estou desenvolvendo isso....\033[m
 
       ''')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
             
             elif opcao_relacionamento.upper() == 'S':
                 validar_relacionamento = 1
@@ -399,16 +384,8 @@ ACCESSTAGE - VALECARD - EXTRATO
       \033[31mFoi mal, ainda estou desenvolvendo isso....\033[m
 
       ''')
-        if os.name == 'nt':
-            os.system('cls')
-        else:
-            os.system('clear')
+        limpar_tela()
 
-    
-    
-    
-    
-    
     
     # 4 -> WTCM
     elif opcao_inicial == '4':
@@ -421,180 +398,87 @@ ACCESSTAGE - VALECARD - EXTRATO
 [4] Visualizar evidência
 [S] Voltar''')
             opcao_wtcm = input('Isira a opção desejada: ')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             if opcao_wtcm == '1':
                 print('\033[1;36mSOLICITAR WTCM\033[m')
                 sleep(1)
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('A partir de agora, você deve copiar os códigos completos informados na tela (enter para continuar).')    
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('cd')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('vi wtcmactions.ini')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('/TRIBANCO.TRIBANCO')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('\033[1;36mSelecionar "insert" para editar, trocar TRIBANCO.TRIBANCO.command=0 para command=1\033[m')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(':wq')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
 
             elif opcao_wtcm == '2':
                 print('\033[1;36mVALIDAR RECEBIMENTO WTCM\033[m')
                 sleep(1)
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('cd wtcm')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('ls -ltr *TRIBANCO*')
                 input('\033[1;36mCaso retorne um arquivo, o WTCM chegou\033[m')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
             elif opcao_wtcm == '3':
                 print('\033[1;36mEDITAR WTCM\033[m')
                 sleep(1)
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('Esse processo só deve ser realizado após a solicitação do WTCM e a validação do recebimento.')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('cd wtcm')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('vi wtcm.TRIBANCO.TRIBANCO')
                 input('\033[1;36mpagedown até o fim do arquivo, colar as contas após a última\033[m')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('esc + :wq')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 datahoje =  input('Isira a data de hoje no modelo YYYYmmdd: ')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(f'''cp -pv wtcm.TRIBANCO.TRIBANCO ~/DEMO.GUSTAVOD/WTCM_TRIBANCO_backup/Evidencia_{datahoje}''')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('cd')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('vi wtcmactions.ini')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('/TRIBANCO.TRIBANCO')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('\033[1;36mSelecionar "insert" para editar, trocar TRIBANCO.TRIBANCO.command=1 para command=2\033[m')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(':wq')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 validar_wtcm = 1
             
             elif opcao_wtcm == '4':
                 print('\033[1;36mVISUALIZAR EVIDÊNCIA\033[m')
                 sleep(1)
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 conta = input('Selecione a conta que deseja pesquisar: ')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('cd ~/DEMO.GUSTAVOD/WTCM_TRIBANCO_backup')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('ls -ltr')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input('vi *ultima evidencia*')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 print(f'/{conta}')
                 input('')
                 validar_wtcm = 1
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
             
             elif opcao_wtcm.upper() == 'S':
                 validar_wtcm = 1
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
             
             else:
                 print('\033[31mEssa opção não é válida\033[m')
                 sleep(1)
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
 
     
     
@@ -613,47 +497,23 @@ A Stone não realiza o reprocessamento de arquivos, mas disponiblizam um banco d
             stone_code = input('Insira o Stone Code do cliente: ')
             caixa_postal = input('Insira o ID da caixa postal do cliente: ')
             dias_retroativos = input('Insira o número de dias retroativos: ')
-            if os.name == 'nt':
-                    os.system('cls')
-            else:
-                    os.system('clear')
+            limpar_tela()
             input('A partir de agora, você deve copiar os códigos completos informados na tela (enter para continuar).')    
-            if os.name == 'nt':
-                    os.system('cls')
-            else:
-                    os.system('clear')
+            limpar_tela()
             input(f'd ~/operacoes/DEMO.{usuario}/mailbox')
-            if os.name == 'nt':
-                    os.system('cls')
-            else:
-                    os.system('clear')
+            limpar_tela()
             input(f'vi {nome_mapa}.ini')
-            if os.name == 'nt':
-                    os.system('cls')
-            else:
-                    os.system('clear')
+            limpar_tela()
             input(f'''[{nome_mapa}]
 authorization0={cnpj};{stone_code};RET.EXT.{stone_code}.390.{caixa_postal}''')
-            if os.name == 'nt':
-                    os.system('cls')
-            else:
-                    os.system('clear')
+            limpar_tela()
             input(f'esc + :wq')
-            if os.name == 'nt':
-                    os.system('cls')
-            else:
-                    os.system('clear')
+            limpar_tela()
             input(f'''/home/skyline/scripts/stone/StoneGetFiles.sh.run ~/operacoes/DEMO.{usuario}/mailbox/{nome_mapa}.ini -r {dias_retroativos}
 ''')
-            if os.name == 'nt':
-                    os.system('cls')
-            else:
-                    os.system('clear')
+            limpar_tela()
             input('cd ~/scripts/stone/python/reprocessamento')
-            if os.name == 'nt':
-                    os.system('cls')
-            else:
-                    os.system('clear')
+            limpar_tela()
             input(f'''for i in *RET.EXT.{stone_code}.390.{caixa_postal}* ; do mv -v $i /var/spool/nexxera/skyline/recebe/ident/$(basename $i | cut -f1 -d\$) ; sleep 1 ; done ''')
             validar_reprocessamento = 1
     
@@ -663,22 +523,13 @@ authorization0={cnpj};{stone_code};RET.EXT.{stone_code}.390.{caixa_postal}''')
          while validar_liberacao == 0:
             print('\033[1;36mLIBERAR ARQUIVOS\033[m')
             sleep(1)
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             pasta = input('Digite o diretório dos arquivos: '.upper())
             diretorio = input('Digite o diretório (mailbox/sent/sitef): ')
             nomenclatura = input('Digite a nomenclatura do arquivo: ')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             input(f'''for i in ~/{pasta}/{diretorio}/*{nomenclatura}* ; do mv -v $i /var/spool/nexxera/skyline/recebe/ident/$(basename $i | cut -f1 -d\$) ; sleep 1 ; done''')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             validar_liberacao = 1
 
 
@@ -692,10 +543,7 @@ authorization0={cnpj};{stone_code};RET.EXT.{stone_code}.390.{caixa_postal}''')
 [2] Vizzoo SE
 [3] Vizzoo Azul
 Selecione o Vizzoo utilizado: ''')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             
             if opcao_vizzoo == '1':
                 tipo_vizzoo = 'vizzoo_hubly'
@@ -712,30 +560,15 @@ Selecione o Vizzoo utilizado: ''')
             else:
                 print('Opção inválida')
                 sleep(1)
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 break
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             cnpj_grupo = input('Insira o CNPJ do grupo:')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             input(f'for i in ~/DEMO.{demo}/mailbox/* ; do /home/skyline/scripts/nexxcard/console/processos/operadoras_CartoesGenerico.sh.run $i traduz; done')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             input(f'cd /home/skyline/scripts/{tipo_vizzoo}/console/')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             input(f'''for i in ~/DEMO.{demo}/mailbox/*LPN* ; do "${{JAVA6_HOME}}/bin/java" -jar nexxcard-console.jar Processo -p ProcessImportaArquivo -i $i -cnpj '{cnpj_grupo}' -c 'nexxcard-config.properties' -verbose ; done''')
             validar_traducao_operadoras = 1
             if os.name == 'nt':
@@ -766,25 +599,13 @@ Selecione o Vizzoo utilizado: ''')
                 sleep(0.5)
                 nomenclatura_arquivo = input('Digite a nomenclatura do arquivo: ')
                 demo = input('Digite seu usuário na DEMO: '.upper())
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(f'cp -pv *{nomenclatura_arquivo}* ~/DEMO.{demo}/mailbox')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(f'''for i in ~/DEMO.{demo}/mailbox/* ; do /home/skyline/scripts/nexxcard/console/processos/operadoras_CartoesGenerico.sh.run $i traduz; done''')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(f'''for i in ~/DEMO.{demo}/mailbox/*LPN* ; do /home/skyline/scripts/thyagos/extrair_pv_arquivo_lpn.sh.run $i ; done''')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 validar_extracao_dados = 1
 
             elif opcao_extracao_dados == '2':
@@ -793,25 +614,13 @@ Selecione o Vizzoo utilizado: ''')
                 sleep(0.5)
                 nomenclatura_arquivo = input('Digite a nomenclatura do arquivo: ')
                 demo = input('Digite seu usuário na DEMO: '.upper())
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(f'cp -pv *{nomenclatura_arquivo}* ~/DEMO.{demo}/mailbox')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(f'''for i in ~/DEMO.{demo}/mailbox/* ; do /home/skyline/scripts/nexxcard/console/processos/operadoras_CartoesGenerico.sh.run $i traduz; done''')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 input(f'''for i in ~/DEMO.{demo}/mailbox/*LPN* ; do/home/skyline/scripts/thyagos/extrair_contas_arquivo_lpn.sh.run $i ; done''')
-                if os.name == 'nt':
-                    os.system('cls')
-                else:
-                    os.system('clear')
+                limpar_tela()
                 validar_extracao_dados = 1
             
             elif opcao_extracao_dados.upper() == 'S':
@@ -823,27 +632,18 @@ Selecione o Vizzoo utilizado: ''')
 \033[1;36mLIBERAÇÃO EM MASSA DE ARQUIVOS\033[m''')
             cnpj_ec = input('Insira os CNPJs/ECs separados por espaços: ')
             diretorio = input('Selecione a caixa e o diretório (Ex: .QUARENTENA/mailbox): ')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             input(f'''for cnpj in {cnpj_ec}; do
     for i in ~/.QUARENTENA/mailbox/*${{cnpj}}*; do
         mv -v $i /var/spool/nexxera/skyline/recebe/ident/$(basename $i | cut -f1 -d\$);
        sleep 1;
     done;
 done;''')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             continuar = input('''[1] Realizar novamente
 [2] Voltar para a tela inicial
 Você deseja: ''')
-            if os.name == 'nt':
-                os.system('cls')
-            else:
-                os.system('clear')
+            limpar_tela()
             if continuar == '2':
                 validar_liberacao_em_massa = 1
             else:
