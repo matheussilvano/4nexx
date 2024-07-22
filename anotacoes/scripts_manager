@@ -1,0 +1,4 @@
+## Importa no EE e move retornos
+/home/skyline/scripts/generico/multiScripts.sh bankweb/Importador_Extrato_Generico.sh.run,&F generico/Generico_Move_Retornos.sh.run,&F,SOFTWORKS.47154625000171
+
+
