@@ -1,4 +1,7 @@
 ## Importa no EE e move retornos
 /home/skyline/scripts/generico/multiScripts.sh bankweb/Importador_Extrato_Generico.sh.run,&F generico/Generico_Move_Retornos.sh.run,&F,SOFTWORKS.47154625000171
 
+## Importa no Vizzoo e copia retornos
+/home/skyline/scripts/generico/multiScripts.sh nexxcard/console/processos/operadoras_CartoesGenerico.sh,&F,vizzoo_hubly,-c,33314516000160 generico/Generico_Copia_Retornos.sh,&F,ALIANCATEC.ALIANCATEC
+
 
