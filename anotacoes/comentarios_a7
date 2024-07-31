@@ -1,14 +1,24 @@
+=========== COMENTÁRIO INTERNO (APENAS IMPLANTAÇÃO) ===========
+
+{panel:title=RESUMO INTERNO (IMPLANTAÇÃO)|borderStyle=dashed|borderColor=#000000|titleBGColor=#eead2d|bgColor=#e0e6ff}
+||ITEM||STATUS||OBS||
+|Caixa Postal|Criada, BONAVIDA.BONAVIDA (46148), senha gerada no commander| (/)|
+|Grupo Vizzoo|Criado, BONAVIDA - PRODUTOS FARMACEUTICOS LTDA (11.349.564/0001-50)| (/)|
+|Relatórios de baixa|Configuração realizada (14:00 - 22:00)| (/)|
+|D.I.|Aguardando recebimento - Cliente| (x)|
+{panel}
+
+=========== COMENTÁRIO PADRÃO ===========
+
 {panel:title=RESUMO TÉCNICO|borderStyle=dashed|borderColor=#000000|titleBGColor=#97acd1|bgColor=#e0e6ff}
 ||ITEM||STATUS||OBS||
-|Situação da demanda:|Aguardando Documento de Implantação preenchido| |
-|Responsável:|Cliente| |
-|Ação necessária:|Realizar o preenchimento do DI| |
-|Instituições contempladas:|Operadoras: Cielo e Picpay, Bancos: CEF(DDA, Conciliação)| |
-|Prazo:| A Definir| |
+|Situação da demanda:|Aguardando Documento de Implantação preenchido| |
+|Responsável:|Cliente| |
+|Ação necessária:|Realizar o preenchimento do DI| |
+|Instituições contempladas:|Operadoras: Adiq, Bancos: Itaú| |
+|Prazo:|A Definir| |
 {panel}
 ||OPERADORA||CNPJ||EC||STATUS||AÇÃO||
-|CIELO|04370610000138|(-)|(x)|Aguardando DI preenchido|
-|Picpay|04370610000138|(-)|(x)|Aguardando DI preenchido|
-
-
-  
+|ADIQ|11.349.564/0001-50|(-)|(x)|Aguardando DI preenchido|
+||BANCO||AGÊNCIA||CONTA||SERVIÇO||STATUS||AÇÃO||
+|ITAÚ|(-)|(-)|(-)|(x)|Aguardando DI preenchido|
